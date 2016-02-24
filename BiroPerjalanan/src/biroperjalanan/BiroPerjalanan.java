@@ -7,7 +7,7 @@ package biroperjalanan;
 
 /**
  *
- * @author Wahyu
+ * @author Arian, Anggita, Agung
  */
 public class BiroPerjalanan {
 
