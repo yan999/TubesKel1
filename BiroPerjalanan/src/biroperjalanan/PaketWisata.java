@@ -9,15 +9,19 @@ package biroperjalanan;
  *
  * @author Arian Nurrifqhi
  */
-public class BiroPerjalanan {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
-        System.out.println("Hello World");
+public class PaketWisata {
+    private TempatWisata[] daftarTujuanWisata;
+    private String tipePaket;
+    
+    
+    public PaketWisata(String tipe){
+    
+       tipePaket = tipe;
     }
     
+//public void addTempatWisata(TempatWisata w){}
+    
+//public
+    
 }
+

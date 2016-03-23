@@ -7,7 +7,7 @@ package biroperjalanan;
 
 /**
  *
- * @author Wahyu
+ * @author Arian Nurrifqhi
  */
 public class TempatWisata {
     
