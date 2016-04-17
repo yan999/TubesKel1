@@ -12,12 +12,19 @@ package Model;
 public class Petugas extends Orang {
     
     private String idpetugas;
-    private String jabatan;
     private int produk;
     public Petugas(String name, String gender, String idktp) {
         super(name, gender, idktp);
     }
     
+    public void addIdPetugas(String id){
+        idpetugas = id;
+    }
+    
+    public String getIdPetugas(){
+        return idpetugas;
+    }
     
     
+   
 }

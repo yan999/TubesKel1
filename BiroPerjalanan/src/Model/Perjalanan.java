@@ -5,14 +5,17 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Arian Nurrifqhi
  */
-public class Pelanggan extends Orang {
-    private String idpelanggan;
-    public Pelanggan(String name, String gender, String idktp) {
-        super(name, gender, idktp);
-    }
+public class Perjalanan {
+    
+    private Pelanggan[] pelanggan;
+    private PaketWisata paketwisata;
+   
+    //ArrayList<Object> 
     
 }
