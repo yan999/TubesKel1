@@ -25,6 +25,12 @@ public class Petugas extends Orang {
         return idpetugas;
     }
     
+    public String getName(){
+        return super.getName();
+    }
     
+    // public String toString(){
+    //    return ("Nama: "+super.getName+"\nGender: "+getGender+"\nID KTP: "+getIdKtp);
+    //}
    
 }

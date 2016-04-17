@@ -17,6 +17,7 @@ public class PaketWisata {
     public PaketWisata(String tipe){
     
        tipePaket = tipe;
+       
     }
     
 //public void addTempatWisata(TempatWisata w){}

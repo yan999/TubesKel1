@@ -29,6 +29,19 @@ public abstract class Orang {
     public String getAddress(){
         return address;
     }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public String getGender(){
+        return gender;
+    }
+    
+    public String getIdKtp(){
+        return idktp;
+    }
+    
 }
     
 
