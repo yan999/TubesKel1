@@ -21,13 +21,51 @@ public class PaketWisata {
     public PaketWisata(String nama, String durasi, String namaT, String type, String fasilitas){
        daftarTempatWisata = new ArrayList<>();
        daftarTempatWisata.add(new TempatWisata(namaT, fasilitas, type));
-        namaPaket = nama;
+       namaPaket = nama;
        this.durasi = durasi;
     }
+    
+    public PaketWisata(){
+        
+    }
+    
+    
     
 //public void addTempatWisata(TempatWisata w){}
     
 //public
+
+    public ArrayList<TempatWisata> getDaftarTempatWisata() {
+        return daftarTempatWisata;
+    }
+
+    public void setDaftarTempatWisata(ArrayList<TempatWisata> daftarTempatWisata) {
+        this.daftarTempatWisata = daftarTempatWisata;
+    }
+
+    public String getNamaPaket() {
+        return namaPaket;
+    }
+
+    public void setNamaPaket(String namaPaket) {
+        this.namaPaket = namaPaket;
+    }
+
+    public int getHarga() {
+        return harga;
+    }
+
+    public void setHarga(int harga) {
+        this.harga = harga;
+    }
+
+    public String getDurasi() {
+        return durasi;
+    }
+
+    public void setDurasi(String durasi) {
+        this.durasi = durasi;
+    }
     
 }
 
