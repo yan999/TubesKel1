@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import Controller.Controller;
+
 /**
  *
  * @author Arian Nurrifqhi
@@ -84,4 +86,8 @@ public class KelolaPetugas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    public void addListener(Controller aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

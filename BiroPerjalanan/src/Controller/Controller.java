@@ -29,6 +29,8 @@ public class Controller implements ActionListener{
     private Step1 st1;
     private Step2 st2;
     private Step3 st3;
+    private KelolaPelanggan kp1;
+    private KelolaPetugas kp2;
     
     public Controller(Aplikasi model){
         this.model = model;
@@ -41,12 +43,17 @@ public class Controller implements ActionListener{
         st1 = new Step1();
         st2 = new Step2();
         st3 = new Step3();
+        kp1 = new KelolaPelanggan();
+        kp2 = new KelolaPetugas();
         
         log.addListener(this);
+        dp.addListener(this);
         
         mainPanel = view.getMainPanel();
         mainPanel.add(log,"0");
         mainPanel.add(dp,"1");
+        mainPanel.add(kp1,"2");
+        mainPanel.add(kp2,"3");
         currentView = "0";
         
         view.getCardLayout().show(mainPanel, currentView);
@@ -61,6 +68,17 @@ public class Controller implements ActionListener{
                 currentView = "1";
                 view.getCardLayout().show(mainPanel, currentView);
             }
+        }
+        else if (currentView.equals("1")){
+            if (source.equals(dp.getdp())){
+                 currentView = "2";
+            view.getCardLayout().show(mainPanel, currentView);
+            }
+        }
+        else if (currentView.equals("1")){
+            if (source.equals(dp.getdp2()))
+                currentView = "3";
+            view.getCardLayout().show(mainPanel, currentView);
         }
     }
 }
