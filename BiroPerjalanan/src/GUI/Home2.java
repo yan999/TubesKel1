@@ -9,12 +9,12 @@ package GUI;
  *
  * @author Arian Nurrifqhi
  */
-public class Home extends javax.swing.JFrame {
+public class Home2 extends javax.swing.JPanel {
 
     /**
-     * Creates new form Home
+     * Creates new form Home2
      */
-    public Home() {
+    public Home2() {
         initComponents();
     }
 
@@ -27,18 +27,29 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Petugas = new javax.swing.JMenu();
+        internasional = new javax.swing.JButton();
+        lokal = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        lokal = new javax.swing.JButton();
-        internasional = new javax.swing.JButton();
 
-        Petugas.setText("jMenu3");
+        internasional.setText("Internasional");
+        internasional.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                internasionalActionPerformed(evt);
+            }
+        });
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        lokal.setText("Lokal");
+        lokal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lokalActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Username");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,8 +63,6 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Username");
-
         jLabel2.setText("Password");
 
         jButton1.setText("Login");
@@ -63,22 +72,8 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        lokal.setText("Lokal");
-        lokal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lokalActionPerformed(evt);
-            }
-        });
-
-        internasional.setText("Internasional");
-        internasional.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                internasionalActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -123,67 +118,30 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(lokal))
                 .addGap(160, 160, 160))
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void lokalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lokalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lokalActionPerformed
 
     private void internasionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_internasionalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_internasionalActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void lokalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lokalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lokalActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Home().setVisible(true);
-            }
-        });
-    }
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu Petugas;
     private javax.swing.JButton internasional;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

@@ -21,13 +21,6 @@ public class BiroPerjalanan {
      * @param args the command line arguments
      */
     
-    private Petugas[] daftarPetugas;
-    private Pelanggan[] daftarPelanggan;
-    private Perjalanan daftarPerjalanan;
-    private PaketWisata[] daftarPaketWisata;
-    private TempatWisata[] daftarTempatWisata;
-    
-    
     
     public static void main(String[] args) {
       

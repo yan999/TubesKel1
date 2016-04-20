@@ -9,12 +9,12 @@ package GUI;
  *
  * @author Arian Nurrifqhi
  */
-public class Transaksi extends javax.swing.JFrame {
+public class Transaksi1 extends javax.swing.JPanel {
 
     /**
-     * Creates new form Transaksi
+     * Creates new form Transaksi1
      */
-    public Transaksi() {
+    public Transaksi1() {
         initComponents();
     }
 
@@ -27,53 +27,60 @@ public class Transaksi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        namalengkap = new javax.swing.JTextField();
-        noktp = new javax.swing.JTextField();
-        Jk = new javax.swing.JComboBox();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        bni = new javax.swing.JRadioButton();
-        bri = new javax.swing.JRadioButton();
-        mandiri = new javax.swing.JRadioButton();
-        bca = new javax.swing.JRadioButton();
-        jSeparator1 = new javax.swing.JSeparator();
         proses = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        bca = new javax.swing.JRadioButton();
+        mandiri = new javax.swing.JRadioButton();
+        bri = new javax.swing.JRadioButton();
+        bni = new javax.swing.JRadioButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        Jk = new javax.swing.JComboBox();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        noktp = new javax.swing.JTextField();
+        namalengkap = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
+        jLabel9 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        proses.setText("SUBMIT");
 
-        jLabel1.setText("Nama Lengkap  :");
+        bca.setText("BCA");
 
-        jLabel2.setText("No KTP  :");
-
-        jLabel3.setText("Jenis Kelamin  :");
-
-        jLabel4.setText("Tanggal Keberangkatan  :");
-
-        jLabel5.setText("Pilih Transfer Bank: ");
-
-        namalengkap.addActionListener(new java.awt.event.ActionListener() {
+        mandiri.setText("Mandiri");
+        mandiri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                namalengkapActionPerformed(evt);
+                mandiriActionPerformed(evt);
             }
         });
 
-        Jk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Laki-Laki","Perempuan" }));
+        bri.setText("BRI");
+        bri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                briActionPerformed(evt);
+            }
+        });
+
+        bni.setText("BNI");
+        bni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bniActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Pilih Transfer Bank: ");
+
+        jLabel4.setText("Tanggal Keberangkatan  :");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,32 +94,19 @@ public class Transaksi extends javax.swing.JFrame {
 
         jLabel8.setText("dd/mm/yyyy");
 
-        bni.setText("BNI");
-        bni.addActionListener(new java.awt.event.ActionListener() {
+        Jk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Laki-Laki","Perempuan" }));
+
+        jLabel3.setText("Jenis Kelamin  :");
+
+        jLabel2.setText("No KTP  :");
+
+        namalengkap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bniActionPerformed(evt);
+                namalengkapActionPerformed(evt);
             }
         });
 
-        bri.setText("BRI");
-        bri.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                briActionPerformed(evt);
-            }
-        });
-
-        mandiri.setText("Mandiri");
-        mandiri.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mandiriActionPerformed(evt);
-            }
-        });
-
-        bca.setText("BCA");
-
-        proses.setText("SUBMIT");
-
-        jLabel9.setText("TRANSAKSI");
+        jLabel1.setText("Nama Lengkap  :");
 
         jLabel10.setForeground(new java.awt.Color(51, 153, 255));
         jLabel10.setText("Step 1 >>");
@@ -121,8 +115,10 @@ public class Transaksi extends javax.swing.JFrame {
 
         jLabel12.setText("Step 3");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        jLabel9.setText("TRANSAKSI");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -227,73 +223,34 @@ public class Transaksi extends javax.swing.JFrame {
                 .addComponent(proses)
                 .addGap(31, 31, 31))
         );
-
-        pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void namalengkapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namalengkapActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_namalengkapActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void bniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bniActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bniActionPerformed
-
-    private void briActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_briActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_briActionPerformed
 
     private void mandiriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mandiriActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mandiriActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Transaksi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Transaksi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Transaksi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Transaksi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void briActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_briActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_briActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Transaksi().setVisible(true);
-            }
-        });
-    }
+    private void bniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bniActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void namalengkapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namalengkapActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_namalengkapActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox Jk;
     private javax.swing.JRadioButton bca;
     private javax.swing.JRadioButton bni;
     private javax.swing.JRadioButton bri;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
