@@ -21,5 +21,19 @@ public class TempatWisata {
         this.fasilitas = fasilitas;
         this.type = type;
     }
+
+    public String getNamaT() {
+        return namaT;
+    }
+
+    public String getFasilitas() {
+        return fasilitas;
+    }
+
+    public String getType() {
+        return type;
+    }
+    
+    
     
 }

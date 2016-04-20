@@ -19,7 +19,8 @@ public class PaketWisata {
     private String durasi;
     
     public PaketWisata(String nama, String durasi, String namaT, String type, String fasilitas){
-       daftarTempatWisata = new ArrayList<TempatWisata>;
+       daftarTempatWisata = new ArrayList<>();
+       daftarTempatWisata.add(new TempatWisata(namaT, fasilitas, type));
         namaPaket = nama;
        this.durasi = durasi;
     }
