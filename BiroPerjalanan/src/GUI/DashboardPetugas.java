@@ -44,7 +44,7 @@ public class DashboardPetugas extends javax.swing.JPanel {
         nomor = new javax.swing.JComboBox();
         waktu = new javax.swing.JComboBox();
         tipepaket = new javax.swing.JComboBox();
-        jButton1 = new javax.swing.JButton();
+        submit = new javax.swing.JButton();
 
         jLabel1.setText("Nama :");
 
@@ -102,7 +102,7 @@ public class DashboardPetugas extends javax.swing.JPanel {
 
         tipepaket.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Internasional","Lokal" }));
 
-        jButton1.setText("SUBMIT");
+        submit.setText("SUBMIT");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -127,7 +127,7 @@ public class DashboardPetugas extends javax.swing.JPanel {
                                 .addComponent(waktu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(submit))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,7 +165,7 @@ public class DashboardPetugas extends javax.swing.JPanel {
                     .addComponent(jLabel8)
                     .addComponent(waktu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nomor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)))
+                    .addComponent(submit)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -186,14 +186,14 @@ public class DashboardPetugas extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -219,7 +219,6 @@ public class DashboardPetugas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -235,6 +234,7 @@ public class DashboardPetugas extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JComboBox nomor;
+    private javax.swing.JButton submit;
     private javax.swing.JComboBox tipepaket;
     private javax.swing.JComboBox waktu;
     // End of variables declaration//GEN-END:variables

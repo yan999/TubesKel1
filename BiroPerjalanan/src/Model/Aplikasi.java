@@ -25,7 +25,7 @@ public class Aplikasi {
         daftarPetugas = new ArrayList<>();
         daftarPerjalanan = new ArrayList<>();
         daftarPaketWisata = new ArrayList<>();
-        daftarTempatWisata = new ArrayList<>();
+      //  daftarTempatWisata = new ArrayList<>();
     } 
     
     public void addPetugas(String name, String gender, String idktp){
@@ -62,9 +62,11 @@ public class Aplikasi {
         
     }
     
-    public void createPaketWisata(){
-        
+    public void createPaketWisata(String nama, String durasi, String namaT, String type, String fasilitas){
+        daftarPaketWisata.add(new PaketWisata(nama, durasi, namaT, type, fasilitas));
     }
+    
+    
     
     
         
