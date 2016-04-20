@@ -86,8 +86,11 @@ public class Controller implements ActionListener{
                  currentView = "2";
             view.getCardLayout().show(mainPanel, currentView);
             }
-            else if (source.equals(dp.getdp2()))
+            else if (source.equals(dp.getdp2())){
                 currentView = "3";
+            view.getCardLayout().show(mainPanel, currentView);
+            }else if (source.equals(dp.getLogout()))
+                currentView = "0";
             view.getCardLayout().show(mainPanel, currentView);
         }
         else if(currentView.equals("2")){
