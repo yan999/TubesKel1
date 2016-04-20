@@ -10,7 +10,7 @@ package Model;
  * @author Arian Nurrifqhi
  */
 public class Pelanggan extends Orang {
-    private String idpelanggan;
+    //private String idpelanggan;
     public Pelanggan(String name, String gender, String idktp) {
         super(name, gender, idktp);
     }

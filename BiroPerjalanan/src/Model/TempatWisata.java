@@ -12,22 +12,14 @@ package Model;
 public class TempatWisata {
     
     private String namaT;
-    private double jarak;
     private String fasilitas;
     private String type;
+    
     
     public TempatWisata(String namaT, String fasilitas, String type){
         this.namaT = namaT;
         this.fasilitas = fasilitas;
         this.type = type;
-    }
-    
-    public void setJarak(int jarak){
-        this.jarak = jarak;
-    }
-    
-    public double getJarak(){
-        return jarak;
     }
     
 }

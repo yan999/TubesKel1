@@ -9,15 +9,19 @@ package Model;
  *
  * @author Arian Nurrifqhi
  */
+import java.util.*;
+import java.io.*;
+
 public class PaketWisata {
-    private TempatWisata[] daftarTujuanWisata;
-    private String tipePaket;
+    private ArrayList<TempatWisata> daftarTempatWisata;
+    private String namaPaket;
+    private int harga;
+    private String durasi;
     
-    
-    public PaketWisata(String tipe){
-    
-       tipePaket = tipe;
-       
+    public PaketWisata(String nama, String durasi, String namaT, String type, String fasilitas){
+       daftarTempatWisata = new ArrayList<TempatWisata>;
+        namaPaket = nama;
+       this.durasi = durasi;
     }
     
 //public void addTempatWisata(TempatWisata w){}
