@@ -24,6 +24,11 @@ public class Controller implements ActionListener{
     
     private Home2 log;
     private DashboardPetugas dp;
+    private PaketInt pi;
+    private PaketLok pl;
+    private Step1 st1;
+    private Step2 st2;
+    private Step3 st3;
     
     public Controller(Aplikasi model){
         this.model = model;
@@ -31,6 +36,11 @@ public class Controller implements ActionListener{
         
         log = new Home2();
         dp = new DashboardPetugas();
+        pi = new PaketInt();
+        pl = new PaketLok();
+        st1 = new Step1();
+        st2 = new Step2();
+        st3 = new Step3();
         
         log.addListener(this);
         
