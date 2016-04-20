@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Arian Nurrifqhi
@@ -141,6 +143,14 @@ public class Home2 extends javax.swing.JPanel {
     }//GEN-LAST:event_loginActionPerformed
 
 
+    public Object getLoginButton(){
+        return login;
+    }
+    
+    public void addListener(ActionListener e){
+        login.addActionListener(e);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton internasional;
     private javax.swing.JLabel jLabel1;

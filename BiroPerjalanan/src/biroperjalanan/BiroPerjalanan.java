@@ -5,6 +5,8 @@
  */
 package biroperjalanan;
 
+import Controller.Controller;
+import Model.Aplikasi;
 import Model.PaketWisata;
 import Model.Pelanggan;
 import Model.Perjalanan;
@@ -23,8 +25,8 @@ public class BiroPerjalanan {
     
     
     public static void main(String[] args) {
-      
-        
+        Aplikasi app = new Aplikasi();
+        new Controller(app);
     }
     
 }

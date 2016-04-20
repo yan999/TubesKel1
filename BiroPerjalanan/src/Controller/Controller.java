@@ -5,10 +5,52 @@
  */
 package Controller;
 
+import GUI.*;
+import Model.Aplikasi;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Arian Nurrifqhi
  */
-public class Controller {
+public class Controller implements ActionListener{
+    private Aplikasi model;
+    private Form view;
     
+    private String currentView;
+    private JPanel mainPanel;
+    
+    private Home2 log;
+    private DashboardPetugas dp;
+    
+    public Controller(Aplikasi model){
+        this.model = model;
+        view = new Form();
+        
+        log = new Home2();
+        dp = new DashboardPetugas();
+        
+        log.addListener(this);
+        
+        mainPanel = view.getMainPanel();
+        mainPanel.add(log,"0");
+        mainPanel.add(dp,"1");
+        currentView = "0";
+        
+        view.getCardLayout().show(mainPanel, currentView);
+        view.setVisible(true);
+        
+    }
+    
+    public void actionPerformed(ActionEvent e){
+        Object source = e.getSource();
+        if (currentView.equals("0")){
+            if (source.equals(log.getLoginButton())){
+                currentView = "1";
+                view.getCardLayout().show(mainPanel, currentView);
+            }
+        }
+    }
 }
