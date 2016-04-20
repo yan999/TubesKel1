@@ -6,6 +6,7 @@
 package GUI;
 
 import Controller.Controller;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -30,7 +31,7 @@ public class KelolaPelanggan extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        back = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -46,7 +47,7 @@ public class KelolaPelanggan extends javax.swing.JPanel {
             .addGap(0, 326, Short.MAX_VALUE)
         );
 
-        jButton1.setText("Back");
+        back.setText("Back");
 
         jLabel1.setText("KONFIGURASI DATA PELANGGAN");
 
@@ -64,7 +65,7 @@ public class KelolaPelanggan extends javax.swing.JPanel {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(266, 266, 266)
-                        .addComponent(jButton1)))
+                        .addComponent(back)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -75,14 +76,22 @@ public class KelolaPelanggan extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(back)
                 .addContainerGap(33, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public Object getBack(){
+        return back;
+    }
+    
+    public void addListener(ActionListener e){
+        back.addActionListener(e);
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton back;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

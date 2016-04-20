@@ -148,8 +148,18 @@ public class Home2 extends javax.swing.JPanel {
         return login;
     }
     
+    public Object getIntButton(){
+        return internasional;
+    }
+    
+    public Object getLokalButton(){
+        return lokal;
+    }
+    
     public void addListener(ActionListener e){
         login.addActionListener(e);
+        internasional.addActionListener(e);
+        lokal.addActionListener(e);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

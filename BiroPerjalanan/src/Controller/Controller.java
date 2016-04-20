@@ -48,12 +48,16 @@ public class Controller implements ActionListener{
         
         log.addListener(this);
         dp.addListener(this);
+        kp1.addListener(this);
+        kp2.addListener(this);
         
         mainPanel = view.getMainPanel();
         mainPanel.add(log,"0");
         mainPanel.add(dp,"1");
         mainPanel.add(kp1,"2");
         mainPanel.add(kp2,"3");
+        mainPanel.add(pi,"4");
+        mainPanel.add(pl,"5");
         currentView = "0";
         
         view.getCardLayout().show(mainPanel, currentView);
@@ -68,17 +72,35 @@ public class Controller implements ActionListener{
                 currentView = "1";
                 view.getCardLayout().show(mainPanel, currentView);
             }
+            else if(source.equals(log.getIntButton())){
+                currentView = "4";
+                view.getCardLayout().show(mainPanel, currentView);
+            }
+            else if(source.equals(log.getLokalButton())){
+                currentView = "5";
+                view.getCardLayout().show(mainPanel, currentView);
+            }
         }
         else if (currentView.equals("1")){
             if (source.equals(dp.getdp())){
                  currentView = "2";
             view.getCardLayout().show(mainPanel, currentView);
             }
-        }
-        else if (currentView.equals("1")){
-            if (source.equals(dp.getdp2()))
+            else if (source.equals(dp.getdp2()))
                 currentView = "3";
             view.getCardLayout().show(mainPanel, currentView);
+        }
+        else if(currentView.equals("2")){
+            if(source.equals(kp1.getBack())){
+                currentView = "1";
+                view.getCardLayout().show(mainPanel, currentView);
+            }
+        }
+        else if(currentView.equals("3")){
+            if(source.equals(kp2.getBack())){
+                currentView = "1";
+                view.getCardLayout().show(mainPanel, currentView);
+            }
         }
     }
 }
