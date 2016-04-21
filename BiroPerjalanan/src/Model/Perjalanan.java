@@ -13,9 +13,48 @@ import java.util.ArrayList;
  */
 public class Perjalanan {
     
-    private Pelanggan[] pelanggan;
-    private PaketWisata paketwisata;
-   
+    private String banktransfer;
+    private String day;
+    private String month;
+    private String year;
+    
+    
+    public Perjalanan(){
+    
+    }
+    
     //ArrayList<Object> 
+
+    public void setBanktransfer(String banktransfer) {
+        this.banktransfer = banktransfer;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getBanktransfer() {
+        return banktransfer;
+    }
+
+    public String getDay() {
+        return day;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public String getYear() {
+        return year;
+    }
     
 }

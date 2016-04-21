@@ -56,8 +56,10 @@ public class Controller extends MouseAdapter implements ActionListener{
         kp1.addListener(this);
         kp2.addListener(this);
         pi.addListener(this);
+        st1.addListener(this);
         pl.addListener(this);
         pi.addAdapter(this);
+        pl.addAdapter(this);
         
         mainPanel = view.getMainPanel();
         mainPanel.add(log,"0");
@@ -141,6 +143,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         }
         else if(currentView.equals("4")){
             if(source.equals(pi.getBack())){
+                kodeSeleksi = -1;
                 currentView = "0";
                 view.getCardLayout().show(mainPanel, currentView);
             }
@@ -154,14 +157,26 @@ public class Controller extends MouseAdapter implements ActionListener{
         }
         else if(currentView.equals("5")){
             if(source.equals(pl.getBack())){
+                kodeSeleksi = -1;
                 currentView = "0";
                 view.getCardLayout().show(mainPanel, currentView);
+            }
+            else if(source.equals(pl.getPesan())){
+                if(kodeSeleksi == -1){
+                   JOptionPane.showMessageDialog(view, "Anda Tidak Memilih Paket", "INFORMASI", JOptionPane.QUESTION_MESSAGE);
+                }else{
+                    currentView = "6";
+                    view.getCardLayout().show(mainPanel, currentView);
+                }
             }
         }
         else if(currentView.equals("6")){
             if(source.equals(st1.getBack())){
                 currentView = "0";
                 view.getCardLayout().show(mainPanel, currentView);
+            }else if(source.equals(st1.getSubmit())){
+                model.addPelanggan(st1.getNama(), st1.getJenisKelamin(), st1.getNoKtp());
+                
             }
         }
     }
@@ -169,6 +184,9 @@ public class Controller extends MouseAdapter implements ActionListener{
     public void mousePressed(MouseEvent e){
         if (currentView.equals("4")){
             kodeSeleksi = pi.getSelectedId();
+        }
+        else if(currentView.equals("5")){
+            kodeSeleksi = pl.getSelectedId();
         }
     }
 }

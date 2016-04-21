@@ -88,7 +88,9 @@ public class Aplikasi {
         return daftarPetugas;
     }
     
-    
+    public ArrayList<Perjalanan> getListTransaksi(){
+        return daftarPerjalanan;
+    }
     
         
     

@@ -29,6 +29,7 @@ public class Step1 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Transfer = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         submit = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -59,8 +60,10 @@ public class Step1 extends javax.swing.JPanel {
 
         submit.setText("SUBMIT");
 
+        Transfer.add(bca);
         bca.setText("BCA");
 
+        Transfer.add(mandiri);
         mandiri.setText("Mandiri");
         mandiri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +71,7 @@ public class Step1 extends javax.swing.JPanel {
             }
         });
 
+        Transfer.add(bri);
         bri.setText("BRI");
         bri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +79,7 @@ public class Step1 extends javax.swing.JPanel {
             }
         });
 
+        Transfer.add(bni);
         bni.setText("BNI");
         bni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -341,6 +346,7 @@ public String getBCA(){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox Jk;
+    private javax.swing.ButtonGroup Transfer;
     private javax.swing.JButton back;
     private javax.swing.JRadioButton bca;
     private javax.swing.JRadioButton bni;
