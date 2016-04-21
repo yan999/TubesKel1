@@ -139,7 +139,7 @@ public class Controller implements ActionListener{
         }
         else if(currentView.equals("5")){
             if(source.equals(pl.getBack())){
-                currentView = "1";
+                currentView = "0";
                 view.getCardLayout().show(mainPanel, currentView);
             }
         }

@@ -42,24 +42,24 @@ public class PaketLok extends javax.swing.JPanel {
 
         TableLokal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Nama Paket", "Lokasi", "Fasilitas", "Harga", "Durasi", "Aksi"
+                "Nama Paket", "Lokasi", "Fasilitas", "Harga", "Durasi"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -118,8 +118,8 @@ public void addListener(ActionListener e){
 }
 
 public void setTableLokal(ArrayList<PaketWisata> p){
-    String[] header ={"Nama Paket","Lokasi","Fasilitas","Harga","Durasi","Aksi"};
-    String[][] isi = new String[p.size()][6] ;
+    String[] header ={"Nama Paket","Lokasi","Fasilitas","Harga","Durasi"};
+    String[][] isi = new String[p.size()][5] ;
     for(int i =0;i<p.size();i++){
         if (p.get(i).getTempatWisata().getType().equals("Lokal")){
         isi[i][0] = p.get(i).getNamaPaket();
@@ -127,7 +127,7 @@ public void setTableLokal(ArrayList<PaketWisata> p){
         isi[i][2] = p.get(i).getTempatWisata().getFasilitas();
         isi[i][3] ="Rp"+ String.valueOf(p.get(i).getHarga());
         isi[i][4] = p.get(i).getDurasi();
-        isi[i][5] = "Pesan";}
+        }
     }
     DefaultTableModel tableModel = new DefaultTableModel(isi,header);
     TableLokal.setModel(tableModel);
