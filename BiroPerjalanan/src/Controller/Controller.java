@@ -72,8 +72,7 @@ public class Controller implements ActionListener{
         Object source = e.getSource();
         if (currentView.equals("0")){
             if (source.equals(log.getLoginButton())){
-                if ()
-                
+                                
                 currentView = "1";
                 view.getCardLayout().show(mainPanel, currentView);
             }
