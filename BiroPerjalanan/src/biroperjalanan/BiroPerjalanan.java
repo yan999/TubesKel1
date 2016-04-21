@@ -25,13 +25,15 @@ public class BiroPerjalanan {
     
     
     public static void main(String[] args) {
-        Aplikasi app = new Aplikasi();
-        new Controller(app);
-        
         Petugas p = new Petugas("Arian Nurrifqhi","Laki-Laki","123456789");
         
         p.addUsername("arian");
         p.addPassword("arian");
+        
+        Aplikasi app = new Aplikasi();
+        app.addPetugas("Arian Nurrifqhi", "Laki-Laki", "123456789");
+        app.getDaftarPetugas();
+        new Controller(app);
         
         
         

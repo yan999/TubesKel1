@@ -72,9 +72,16 @@ public class Controller implements ActionListener{
         Object source = e.getSource();
         if (currentView.equals("0")){
             if (source.equals(log.getLoginButton())){
-                                
+                if(log.getUsername().equals("")||log.getPassword().equals("")){
+                    JOptionPane.showMessageDialog(view, "Data Masih Kosong", "ERROR",JOptionPane.ERROR_MESSAGE);
+                }
+                else if(model.checkPetugas(log.getUsername(), log.getPassword())!=null){
+                log.Refresh();
                 currentView = "1";
-                view.getCardLayout().show(mainPanel, currentView);
+                view.getCardLayout().show(mainPanel, currentView);}
+                else
+                    JOptionPane.showMessageDialog(view, "Username/password Salah", "ERROR",JOptionPane.ERROR_MESSAGE);
+                    
             }
             else if(source.equals(log.getIntButton())){
                 pi.setTableInt(model.getPaketWisata());
