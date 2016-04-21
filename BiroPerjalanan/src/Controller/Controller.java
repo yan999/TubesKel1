@@ -101,6 +101,7 @@ public class Controller implements ActionListener{
             view.getCardLayout().show(mainPanel, currentView);
             }
             else if (source.equals(dp.getdp2())){
+                kp2.setTablePetugas(model.getDaftarPetugas());
                 currentView = "3";
             view.getCardLayout().show(mainPanel, currentView);
             }else if (source.equals(dp.getLogout())){

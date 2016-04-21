@@ -54,6 +54,10 @@ public class Petugas extends Orang {
         return password;
     }
     
+    public String getJenisKelamin(){
+        return super.getGender();
+    }
+    
     // public String toString(){
     //    return ("Nama: "+super.getName+"\nGender: "+getGender+"\nID KTP: "+getIdKtp);
     //}

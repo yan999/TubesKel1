@@ -6,7 +6,10 @@
 package GUI;
 
 import Controller.Controller;
+import Model.Petugas;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -32,13 +35,13 @@ public class KelolaPetugas extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TabelPetugas = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         back = new javax.swing.JButton();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelPetugas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -57,7 +60,7 @@ public class KelolaPetugas extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TabelPetugas);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -116,14 +119,28 @@ public class KelolaPetugas extends javax.swing.JPanel {
     public void addListener(ActionListener e){
         back.addActionListener(e);
     }
+
+public void setTablePetugas(ArrayList<Petugas> p){
+    String[] header ={"ID","Nama","Username","Jenis Kelamin"};
+    String[][] isi = new String[p.size()][4] ;
+    for(int i =0;i<p.size();i++){
+        isi[i][0] = p.get(i).getIdKtp();
+        isi[i][1] = p.get(i).getName();
+        isi[i][2] = p.get(i).getUsername();
+        isi[i][3] = p.get(i).getGender();
+    }
     
+    DefaultTableModel tableModel = new DefaultTableModel(isi,header);
+    TabelPetugas.setModel(tableModel);
+    
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TabelPetugas;
     private javax.swing.JButton back;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
    /* public void addListener(Controller aThis) {
