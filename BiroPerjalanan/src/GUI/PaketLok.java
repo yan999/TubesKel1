@@ -9,6 +9,7 @@ import Model.PaketWisata;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import static java.util.Collections.list;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -103,6 +104,7 @@ public Object getBack(){
     return back;
 }
 
+
 public void addListener(ActionListener e){
     back.addActionListener(e);
 }
@@ -111,13 +113,16 @@ public void setTableLokal(ArrayList<PaketWisata> p){
     String[] header ={"Nama Paket","Lokasi","Fasilitas","Harga","Durasi","Aksi"};
     String[][] isi = new String[p.size()][6] ;
     for(int i =0;i<p.size();i++){
+        if (p.get(i).getTempatWisata().getType().equals("Lokal")){
         isi[i][0] = p.get(i).getNamaPaket();
         isi[i][1] = p.get(i).getTempatWisata().getNamaT();
         isi[i][2] = p.get(i).getTempatWisata().getFasilitas();
-        isi[i][3] = String.valueOf(p.get(i).getHarga());
+        isi[i][3] ="Rp"+ String.valueOf(p.get(i).getHarga());
         isi[i][4] = p.get(i).getDurasi();
-        isi[i][5] = "Pesan";
+        isi[i][5] = "Pesan";}
     }
+    DefaultTableModel tableModel = new DefaultTableModel(isi,header);
+    TableLokal.setModel(tableModel);
     
 }
 

@@ -66,8 +66,14 @@ public class Aplikasi {
         daftarPaketWisata.add(new PaketWisata(nama, namaT, fasilitas, harga, type, durasi));
     }
     
+    
+    
     public ArrayList<PaketWisata> getPaketWisata(){
         return daftarPaketWisata;
+    }
+
+    public void createPaketWisata(String namaPaket, String lokasi, String currentView, String currentView0, String currentView1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

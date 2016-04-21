@@ -292,15 +292,15 @@ public class DashboardPetugas extends javax.swing.JPanel {
         return Fasilitas.getText();
     }
     
-    public String getHarga(){
-        return Harga.getText();
+    public int getHarga(){
+        return Integer.parseInt(Harga.getText());
     }
     
     public String getTipe(){
         return (String) tipepaket.getSelectedItem();
     }
     
-    public String getDurasi1(){
+    public String getDurasi(){
         return (String) nomor.getSelectedItem() + " "+(String) waktu.getSelectedItem();
     }
     

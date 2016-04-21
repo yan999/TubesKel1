@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import Model.PaketWisata;
+import java.util.ArrayList;
+
 /**
  *
  * @author Arian Nurrifqhi
@@ -30,6 +33,7 @@ public class PaketInt extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        back = new javax.swing.JButton();
 
         jLabel1.setText("PAKET INTERNASIONAL");
 
@@ -64,6 +68,8 @@ public class PaketInt extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        back.setText("Back");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -74,7 +80,9 @@ public class PaketInt extends javax.swing.JPanel {
                 .addGap(240, 240, 240))
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(back)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -84,12 +92,30 @@ public class PaketInt extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(47, 47, 47)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addComponent(back)
+                .addGap(23, 23, 23))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+public void setTableLokal(ArrayList<PaketWisata> p){
+    String[] header ={"Nama Paket","Lokasi","Fasilitas","Harga","Durasi","Aksi"};
+    String[][] isi = new String[p.size()][6] ;
+    for(int i =0;i<p.size();i++){
+        if (p.get(i).getTempatWisata().getType().equals("Internasional")){
+        isi[i][0] = p.get(i).getNamaPaket();
+        isi[i][1] = p.get(i).getTempatWisata().getNamaT();
+        isi[i][2] = p.get(i).getTempatWisata().getFasilitas();
+        isi[i][3] = String.valueOf(p.get(i).getHarga());
+        isi[i][4] = p.get(i).getDurasi();
+        isi[i][5] = "Pesan";}
+    }
+    
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

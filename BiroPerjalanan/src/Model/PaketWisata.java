@@ -18,7 +18,7 @@ public class PaketWisata {
     private int harga;
     private String durasi;
     
-    public PaketWisata(String nama, String durasi, String namaT, int harga,String type, String fasilitas){
+    public PaketWisata(String nama, String fasilitas, String namaT, int harga,String type, String durasi){
        daftarTempatWisata = new ArrayList<>();
        daftarTempatWisata.add(new TempatWisata(namaT, fasilitas, type));
        namaPaket = nama;

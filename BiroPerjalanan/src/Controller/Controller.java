@@ -78,6 +78,7 @@ public class Controller implements ActionListener{
                 view.getCardLayout().show(mainPanel, currentView);
             }
             else if(source.equals(log.getLokalButton())){
+                pl.setTableLokal(model.getPaketWisata());
                 currentView = "5";
                 view.getCardLayout().show(mainPanel, currentView);
             }
@@ -95,13 +96,12 @@ public class Controller implements ActionListener{
             view.getCardLayout().show(mainPanel, currentView);
             }else if(source.equals(dp.getSubmit()))
                 if((dp.getNamaPaket().equals(""))||(dp.getLokasi().equals(""))||(dp.getFasilitas().equals(""))
-                        ||(dp.getHarga().equals(""))){
+                        ||(dp.getHarga() <= 0)){
                     JOptionPane.showMessageDialog(view, "Data Masih Kosong", "Warning", JOptionPane.ERROR_MESSAGE);
                 }
                 else{
-                    model.createPaketWisata(dp.getNamaPaket(), dp.getLokasi(), currentView, currentView, currentView);
+                    model.createPaketWisata(dp.getNamaPaket(), dp.getLokasi(),dp.getFasilitas(),dp.getHarga(), dp.getTipe(), dp.getDurasi());
                     JOptionPane.showMessageDialog(view, "Data Ditambahkan", "Confirm", JOptionPane.INFORMATION_MESSAGE);
-                    
                 }
     
         }
