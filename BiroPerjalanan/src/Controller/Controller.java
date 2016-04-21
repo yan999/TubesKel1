@@ -175,8 +175,14 @@ public class Controller extends MouseAdapter implements ActionListener{
                 currentView = "0";
                 view.getCardLayout().show(mainPanel, currentView);
             }else if(source.equals(st1.getSubmit())){
+                if(st1.getNama().equals("")||st1.getJenisKelamin().equals("")||st1.getNoKtp().equals("")
+                        ||st1.getDay().equals("")||st1.getMonth().equals("")||st1.getYear().equals("")){
+                    JOptionPane.showMessageDialog(view, "Data Belum Lengkap", "PERINGATAN", JOptionPane.QUESTION_MESSAGE);
+                }else{
                 model.addPelanggan(st1.getNama(), st1.getJenisKelamin(), st1.getNoKtp());
-                
+                model.addPerjalanan(st1.getDay(), st1.getMonth(), st1.getYear(), st1.getOperation());
+                currentView = "7";
+                view.getCardLayout().show(mainPanel, currentView);}
             }
         }
     }

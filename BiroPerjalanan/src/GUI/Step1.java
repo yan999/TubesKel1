@@ -328,6 +328,19 @@ public String getYear(){
     return year.getText();
 }
 
+public String getOperation(){
+    if(bni.isSelected()){
+        return "BNI";
+    }else if(mandiri.isSelected()){
+        return "Mandiri";
+    }else if(bri.isSelected()){
+        return "BRI";
+    }else if(bca.isSelected()){
+        return "BCA";
+    }else
+        return "";
+}
+
 public String getBNI(){
     return bni.getText();
 }

@@ -36,6 +36,11 @@ public class Aplikasi {
         daftarPelanggan.add(new Pelanggan(name, gender, idktp));
     }
     
+    public void addPerjalanan(String day, String month, String year, String banktransfer){
+        daftarPerjalanan.add(new Perjalanan(day, month, year, banktransfer));
+    }
+   
+    
     public int findPelangganbyId(String id){
         for (Pelanggan p : daftarPelanggan){
             if(p.getIdKtp().equals(id))
@@ -91,9 +96,6 @@ public class Aplikasi {
     public ArrayList<Perjalanan> getListTransaksi(){
         return daftarPerjalanan;
     }
-    
-        
-    
-    
+     
     
 }

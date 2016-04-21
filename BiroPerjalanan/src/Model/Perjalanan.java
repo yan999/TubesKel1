@@ -19,8 +19,11 @@ public class Perjalanan {
     private String year;
     
     
-    public Perjalanan(){
-    
+    public Perjalanan(String day, String month, String year, String bankTransfer){
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.banktransfer = bankTransfer;
     }
     
     //ArrayList<Object> 
