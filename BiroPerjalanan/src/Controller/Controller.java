@@ -35,7 +35,7 @@ public class Controller extends MouseAdapter implements ActionListener{
     private KelolaPelanggan kp1;
     private KelolaPetugas kp2;
     
-    private int kodeSeleksi;
+    private int kodeSeleksi =-1;
     
     public Controller(Aplikasi model){
         this.model = model;
@@ -57,6 +57,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         kp2.addListener(this);
         pi.addListener(this);
         pl.addListener(this);
+        pi.addAdapter(this);
         
         mainPanel = view.getMainPanel();
         mainPanel.add(log,"0");
@@ -144,7 +145,11 @@ public class Controller extends MouseAdapter implements ActionListener{
                 view.getCardLayout().show(mainPanel, currentView);
             }
             else if (source.equals(pi.getPesan())){
-                currentView = "";
+                if (kodeSeleksi == -1){
+                    JOptionPane.showMessageDialog(view, "Anda Tidak Memilih Paket", "INFORMASI", JOptionPane.QUESTION_MESSAGE);
+                }else{
+                currentView = "6";
+                view.getCardLayout().show(mainPanel, currentView);}
             }
         }
         else if(currentView.equals("5")){

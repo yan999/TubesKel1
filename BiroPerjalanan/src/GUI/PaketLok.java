@@ -7,6 +7,7 @@ package GUI;
 
 import Model.PaketWisata;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
 import static java.util.Collections.list;
 import javax.swing.table.DefaultTableModel;
@@ -37,6 +38,7 @@ public class PaketLok extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         TableLokal = new javax.swing.JTable();
         back = new javax.swing.JButton();
+        pesan = new javax.swing.JButton();
 
         jLabel1.setText("PAKET LOKAL");
 
@@ -75,6 +77,8 @@ public class PaketLok extends javax.swing.JPanel {
             }
         });
 
+        pesan.setText("Pesan");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,8 +90,11 @@ public class PaketLok extends javax.swing.JPanel {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(back)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(back)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pesan))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
@@ -99,7 +106,9 @@ public class PaketLok extends javax.swing.JPanel {
                 .addGap(40, 40, 40)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addComponent(back)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(back)
+                    .addComponent(pesan))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -112,9 +121,13 @@ public Object getBack(){
     return back;
 }
 
+public Object getPesan(){
+    return pesan;
+}
 
 public void addListener(ActionListener e){
     back.addActionListener(e);
+    pesan.addActionListener(e);
 }
 
 public void setTableLokal(ArrayList<PaketWisata> p){
@@ -134,6 +147,13 @@ public void setTableLokal(ArrayList<PaketWisata> p){
     
 }
 
+public int getSelectedId(){
+    return TableLokal.getSelectedRow();
+}
+
+public void addAdapter(MouseAdapter e){
+    TableLokal.addMouseListener(e);
+}
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -141,5 +161,6 @@ public void setTableLokal(ArrayList<PaketWisata> p){
     private javax.swing.JButton back;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton pesan;
     // End of variables declaration//GEN-END:variables
 }
