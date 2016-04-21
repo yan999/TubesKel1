@@ -36,6 +36,7 @@ public class Controller extends MouseAdapter implements ActionListener{
     private KelolaPetugas kp2;
     
     private int kodeSeleksi =-1;
+    private String jPanel;
     
     public Controller(Aplikasi model){
         this.model = model;
@@ -152,6 +153,7 @@ public class Controller extends MouseAdapter implements ActionListener{
                 if (kodeSeleksi == -1){
                     JOptionPane.showMessageDialog(view, "Anda Tidak Memilih Paket", "INFORMASI", JOptionPane.QUESTION_MESSAGE);
                 }else{
+                jPanel=currentView;
                 currentView = "6";
                 view.getCardLayout().show(mainPanel, currentView);}
             }
@@ -166,6 +168,7 @@ public class Controller extends MouseAdapter implements ActionListener{
                 if(kodeSeleksi == -1){
                    JOptionPane.showMessageDialog(view, "Anda Tidak Memilih Paket", "INFORMASI", JOptionPane.QUESTION_MESSAGE);
                 }else{
+                    jPanel=currentView;
                     currentView = "6";
                     view.getCardLayout().show(mainPanel, currentView);
                 }
@@ -180,6 +183,9 @@ public class Controller extends MouseAdapter implements ActionListener{
                         ||st1.getDay().equals("")||st1.getMonth().equals("")||st1.getYear().equals("")){
                     JOptionPane.showMessageDialog(view, "Data Belum Lengkap", "PERINGATAN", JOptionPane.QUESTION_MESSAGE);
                 }else{
+                    if(jPanel=="4"){
+                        st2.setPaketWisata(model.getInternasional().get(kodeSeleksi));
+                    }
                 model.addPelanggan(st1.getNama(), st1.getJenisKelamin(), st1.getNoKtp());
                 model.addPerjalanan(st1.getDay(), st1.getMonth(), st1.getYear(), st1.getOperation());
                 currentView = "7";
