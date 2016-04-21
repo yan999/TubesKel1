@@ -13,12 +13,23 @@ public class Petugas extends Orang {
     
     private String idpetugas;
     private int produk;
+    private String password;
+    private String username;
+    
     public Petugas(String name, String gender, String idktp) {
         super(name, gender, idktp);
     }
     
     public void addIdPetugas(String id){
         idpetugas = id;
+    }
+    
+    public void addUsername(String username){
+        this.username = username;
+    }
+    
+    public void addPassword(String password){
+        this.password = password;
     }
     
     public String getIdPetugas(){
