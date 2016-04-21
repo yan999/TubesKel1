@@ -5,7 +5,10 @@
  */
 package GUI;
 
+import Model.PaketWisata;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import static java.util.Collections.list;
 
 /**
  *
@@ -31,13 +34,20 @@ public class PaketLok extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TableLokal = new javax.swing.JTable();
         back = new javax.swing.JButton();
 
         jLabel1.setText("PAKET LOKAL");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TableLokal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -55,7 +65,7 @@ public class PaketLok extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TableLokal);
 
         back.setText("Back");
 
@@ -96,12 +106,27 @@ public Object getBack(){
 public void addListener(ActionListener e){
     back.addActionListener(e);
 }
+
+public void setTableLokal(ArrayList<PaketWisata> p){
+    String[] header ={"Nama Paket","Lokasi","Fasilitas","Harga","Durasi","Aksi"};
+    String[][] isi = new String[p.size()][6] ;
+    for(int i =0;i<p.size();i++){
+        isi[i][0] = p.get(i).getNamaPaket();
+        isi[i][1] = p.get(i).getTempatWisata().getNamaT();
+        isi[i][2] = p.get(i).getTempatWisata().getFasilitas();
+        isi[i][3] = String.valueOf(p.get(i).getHarga());
+        isi[i][4] = p.get(i).getDurasi();
+        isi[i][5] = "Pesan";
+    }
+    
+}
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TableLokal;
     private javax.swing.JButton back;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

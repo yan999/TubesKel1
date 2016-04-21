@@ -9,6 +9,7 @@ import GUI.*;
 import Model.Aplikasi;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -89,9 +90,20 @@ public class Controller implements ActionListener{
             else if (source.equals(dp.getdp2())){
                 currentView = "3";
             view.getCardLayout().show(mainPanel, currentView);
-            }else if (source.equals(dp.getLogout()))
+            }else if (source.equals(dp.getLogout())){
                 currentView = "0";
             view.getCardLayout().show(mainPanel, currentView);
+            }else if(source.equals(dp.getSubmit()))
+                if((dp.getNamaPaket().equals(""))||(dp.getLokasi().equals(""))||(dp.getFasilitas().equals(""))
+                        ||(dp.getHarga().equals(""))){
+                    JOptionPane.showMessageDialog(view, "Data Masih Kosong", "Warning", JOptionPane.ERROR_MESSAGE);
+                }
+                else{
+                    model.createPaketWisata(dp.getNamaPaket(), dp.getLokasi(), currentView, currentView, currentView);
+                    JOptionPane.showMessageDialog(view, "Data Ditambahkan", "Confirm", JOptionPane.INFORMATION_MESSAGE);
+                    
+                }
+    
         }
         else if(currentView.equals("2")){
             if(source.equals(kp1.getBack())){

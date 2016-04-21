@@ -62,8 +62,12 @@ public class Aplikasi {
         
     }
     
-    public void createPaketWisata(String nama, String durasi, String namaT, String type, String fasilitas){
-        daftarPaketWisata.add(new PaketWisata(nama, durasi, namaT, type, fasilitas));
+    public void createPaketWisata(String nama, String namaT, String fasilitas, int harga, String type, String durasi){
+        daftarPaketWisata.add(new PaketWisata(nama, namaT, fasilitas, harga, type, durasi));
+    }
+    
+    public ArrayList<PaketWisata> getPaketWisata(){
+        return daftarPaketWisata;
     }
     
     

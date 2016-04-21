@@ -18,15 +18,20 @@ public class PaketWisata {
     private int harga;
     private String durasi;
     
-    public PaketWisata(String nama, String durasi, String namaT, String type, String fasilitas){
+    public PaketWisata(String nama, String durasi, String namaT, int harga,String type, String fasilitas){
        daftarTempatWisata = new ArrayList<>();
        daftarTempatWisata.add(new TempatWisata(namaT, fasilitas, type));
        namaPaket = nama;
        this.durasi = durasi;
+       this.harga = harga;
     }
     
     public PaketWisata(){
         
+    }
+    
+    public TempatWisata getTempatWisata(){
+        return daftarTempatWisata.get(0);
     }
     
     
