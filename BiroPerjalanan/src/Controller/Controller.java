@@ -51,6 +51,8 @@ public class Controller implements ActionListener{
         dp.addListener(this);
         kp1.addListener(this);
         kp2.addListener(this);
+        pi.addListener(this);
+        pl.addListener(this);
         
         mainPanel = view.getMainPanel();
         mainPanel.add(log,"0");
@@ -70,6 +72,8 @@ public class Controller implements ActionListener{
         Object source = e.getSource();
         if (currentView.equals("0")){
             if (source.equals(log.getLoginButton())){
+                if ()
+                
                 currentView = "1";
                 view.getCardLayout().show(mainPanel, currentView);
             }
@@ -103,12 +107,13 @@ public class Controller implements ActionListener{
                 else{
                     model.createPaketWisata(dp.getNamaPaket(), dp.getLokasi(),dp.getFasilitas(),dp.getHarga(), dp.getTipe(), dp.getDurasi());
                     JOptionPane.showMessageDialog(view, "Data Ditambahkan", "Confirm", JOptionPane.INFORMATION_MESSAGE);
+                    dp.Rafresh();
                 }
     
         }
         else if(currentView.equals("2")){
             if(source.equals(kp1.getBack())){
-                currentView = "1";
+                currentView = "0";
                 view.getCardLayout().show(mainPanel, currentView);
             }
         }
@@ -120,7 +125,7 @@ public class Controller implements ActionListener{
         }
         else if(currentView.equals("4")){
             if(source.equals(pi.getBack())){
-                currentView = "1";
+                currentView = "0";
                 view.getCardLayout().show(mainPanel, currentView);
             }
         }

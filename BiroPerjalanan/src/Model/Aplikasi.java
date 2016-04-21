@@ -66,6 +66,14 @@ public class Aplikasi {
         daftarPaketWisata.add(new PaketWisata(nama, namaT, fasilitas, harga, type, durasi));
     }
     
+    public Petugas checkPetugas(String username, String password){
+        for (Petugas pt : daftarPetugas){
+            if (pt.getUsername().equals(username) && (pt.getPassword().equals(password))){
+                return pt;
+            }
+        }
+        return null;
+    }
     
     
     public ArrayList<PaketWisata> getPaketWisata(){

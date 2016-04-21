@@ -40,6 +40,14 @@ public class Petugas extends Orang {
         return super.getName();
     }
     
+    public String getUsername(){
+        return username;
+    }
+    
+    public String getPassword(){
+        return password;
+    }
+    
     // public String toString(){
     //    return ("Nama: "+super.getName+"\nGender: "+getGender+"\nID KTP: "+getIdKtp);
     //}

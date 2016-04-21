@@ -280,6 +280,13 @@ public class DashboardPetugas extends javax.swing.JPanel {
         return logout;
     }
     
+    public void Rafresh(){
+        namaPaket.setText("");
+        Lokasi.setText("");
+        Fasilitas.setText("");
+        Harga.setText("0");
+    }
+    
     public String getNamaPaket(){
         return namaPaket.getText();
     }
