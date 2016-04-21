@@ -65,6 +65,9 @@ public class Controller extends MouseAdapter implements ActionListener{
         mainPanel.add(kp2,"3");
         mainPanel.add(pi,"4");
         mainPanel.add(pl,"5");
+        mainPanel.add(st1,"6");
+        mainPanel.add(st2,"7");
+        mainPanel.add(st3,"8");
         currentView = "0";
         
         view.getCardLayout().show(mainPanel, currentView);
@@ -146,6 +149,12 @@ public class Controller extends MouseAdapter implements ActionListener{
         }
         else if(currentView.equals("5")){
             if(source.equals(pl.getBack())){
+                currentView = "0";
+                view.getCardLayout().show(mainPanel, currentView);
+            }
+        }
+        else if(currentView.equals("6")){
+            if(source.equals(st1.getBack())){
                 currentView = "0";
                 view.getCardLayout().show(mainPanel, currentView);
             }
