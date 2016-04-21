@@ -57,6 +57,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         kp2.addListener(this);
         pi.addListener(this);
         st1.addListener(this);
+        st2.addListener(this);
         pl.addListener(this);
         pi.addAdapter(this);
         pl.addAdapter(this);
@@ -183,6 +184,15 @@ public class Controller extends MouseAdapter implements ActionListener{
                 model.addPerjalanan(st1.getDay(), st1.getMonth(), st1.getYear(), st1.getOperation());
                 currentView = "7";
                 view.getCardLayout().show(mainPanel, currentView);}
+            }
+        }
+        else if(currentView.equals("7")){
+            if(source.equals(st2.getBack())){
+                currentView = "6";
+                view.getCardLayout().show(mainPanel, currentView);
+            }else if(source.equals(st2.getKonfirmasi())){
+                currentView = "8";
+                view.getCardLayout().show(mainPanel, currentView);
             }
         }
     }

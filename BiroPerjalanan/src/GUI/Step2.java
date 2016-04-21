@@ -5,6 +5,10 @@
  */
 package GUI;
 
+import Model.PaketWisata;
+import Model.Perjalanan;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Arian Nurrifqhi
@@ -40,7 +44,7 @@ public class Step2 extends javax.swing.JPanel {
         jTable2 = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        confirm = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -58,7 +62,7 @@ public class Step2 extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        back = new javax.swing.JButton();
 
         jButton1.setText("Konfirmasi");
 
@@ -127,10 +131,10 @@ public class Step2 extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(jTable3);
 
-        jButton2.setText("Konfirmasi");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        confirm.setText("Konfirmasi");
+        confirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                confirmActionPerformed(evt);
             }
         });
 
@@ -231,7 +235,7 @@ public class Step2 extends javax.swing.JPanel {
 
         jLabel12.setText("TRANSAKSI");
 
-        jButton3.setText("Back");
+        back.setText("Back");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -242,13 +246,13 @@ public class Step2 extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3)
+                            .addComponent(back)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(55, 55, 55)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(49, 49, 49)
-                                .addComponent(jButton2))
+                                .addComponent(confirm))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel7)
                                 .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)))
@@ -289,27 +293,63 @@ public class Step2 extends javax.swing.JPanel {
                         .addComponent(jLabel7)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2))
+                    .addComponent(back)
+                    .addComponent(confirm))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_confirmActionPerformed
 
+public Object getBack(){
+    return back;
+}
+
+public Object getKonfirmasi(){
+    return confirm;
+}
+
+public void addListener(ActionListener e){
+    back.addActionListener(e);
+    confirm.addActionListener(e);
+}
+    
+public void setPaketWisata(PaketWisata pw){
+    Nama.setText("Nama Paket: "+pw.getNamaPaket());
+    lokasi.setText("Lokasi: "+pw.getTempatWisata().getNamaT());
+    fasilitas.setText("Fasilitas: "+pw.getTempatWisata().getFasilitas());
+    harga.setText("Harga: "+String.valueOf(pw.getHarga()));
+    durasi.setText("Durasi: "+pw.getDurasi());
+    Tipe.setText("Tipe Paket: "+pw.getTempatWisata().getType());
+}
+
+public void setPerjalanan(Perjalanan pj){
+    Banktransfer.setText("Bank Transfer: "+pj.getBanktransfer());
+    if(pj.getBanktransfer() == "BNI"){
+        norek.setText("No Rek: 130190901919");
+    }else if(pj.getBanktransfer() == "Mandiri"){
+        norek.setText("No Rek: 130111444444");
+    }else if(pj.getBanktransfer() == "BCA"){
+        norek.setText("No Rek: 120167272728");
+    }else if(pj.getBanktransfer() == "BRI"){
+        norek.setText("No Rek: 111027127273");
+    }
+    keberangkatan.setText("Keberangkatan:"+pj.getDay()+" //"+pj.getMonth()+" //"+pj.getYear());
+    
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banktransfer;
     private javax.swing.JLabel Nama;
     private javax.swing.JLabel Tipe;
+    private javax.swing.JButton back;
+    private javax.swing.JButton confirm;
     private javax.swing.JLabel durasi;
     private javax.swing.JLabel fasilitas;
     private javax.swing.JLabel harga;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -40,6 +40,25 @@ public class Aplikasi {
         daftarPerjalanan.add(new Perjalanan(day, month, year, banktransfer));
     }
    
+    public ArrayList<PaketWisata> getLokal(){
+        ArrayList<PaketWisata> lokal = new ArrayList<>();
+        for (PaketWisata pw : daftarPaketWisata){
+            if(pw.getTempatWisata().getType().equals("Lokal")){
+                lokal.add(pw);
+            }
+        }
+        return lokal;
+    }
+    
+    public ArrayList<PaketWisata> getInternasional(){
+        ArrayList<PaketWisata> lokal = new ArrayList<>();
+        for (PaketWisata pw : daftarPaketWisata){
+            if(pw.getTempatWisata().getType().equals("Internasional")){
+                lokal.add(pw);
+            }
+        }
+        return lokal;
+    }
     
     public int findPelangganbyId(String id){
         for (Pelanggan p : daftarPelanggan){
