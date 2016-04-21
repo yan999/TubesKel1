@@ -76,6 +76,7 @@ public class Controller implements ActionListener{
                     JOptionPane.showMessageDialog(view, "Data Masih Kosong", "ERROR",JOptionPane.ERROR_MESSAGE);
                 }
                 else if(model.checkPetugas(log.getUsername(), log.getPassword())!=null){
+                dp.setIdentitasNama(model.checkPetugas(log.getUsername(), log.getPassword()));
                 log.Refresh();
                 currentView = "1";
                 view.getCardLayout().show(mainPanel, currentView);}
@@ -119,7 +120,7 @@ public class Controller implements ActionListener{
         }
         else if(currentView.equals("2")){
             if(source.equals(kp1.getBack())){
-                currentView = "0";
+                currentView = "1";
                 view.getCardLayout().show(mainPanel, currentView);
             }
         }

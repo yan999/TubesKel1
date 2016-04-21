@@ -24,6 +24,10 @@ public class Petugas extends Orang {
         idpetugas = id;
     }
     
+    public String getidKtp(){
+        return super.getIdKtp();
+    }
+    
     
     public void addUsername(String username){
         this.username = username;

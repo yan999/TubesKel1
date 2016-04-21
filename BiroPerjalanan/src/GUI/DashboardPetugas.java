@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import Model.Petugas;
 import java.awt.event.ActionListener;
 
 /**
@@ -29,8 +30,8 @@ public class DashboardPetugas extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        NamaP = new javax.swing.JLabel();
+        IDP = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -52,9 +53,9 @@ public class DashboardPetugas extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         logout = new javax.swing.JButton();
 
-        jLabel1.setText("Nama :");
+        NamaP.setText("Nama :");
 
-        jLabel2.setText("ID Petugas:");
+        IDP.setText("ID Petugas:");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("INPUT PAKET"));
 
@@ -217,10 +218,10 @@ public class DashboardPetugas extends javax.swing.JPanel {
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(IDP)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(NamaP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(logout)
                         .addGap(65, 65, 65))))
@@ -233,10 +234,10 @@ public class DashboardPetugas extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addComponent(NamaP)
                     .addComponent(logout))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(IDP)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -278,6 +279,11 @@ public class DashboardPetugas extends javax.swing.JPanel {
      
     public Object getLogout(){
         return logout;
+    }
+    
+    public void setIdentitasNama(Petugas p){
+        NamaP.setText("Nama: "+p.getName());
+        IDP.setText("ID Petugas: "+p.getIdKtp());
     }
     
     public void Rafresh(){
@@ -326,11 +332,11 @@ public class DashboardPetugas extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Fasilitas;
     private javax.swing.JTextField Harga;
+    private javax.swing.JLabel IDP;
     private javax.swing.JTextField Lokasi;
+    private javax.swing.JLabel NamaP;
     private javax.swing.JButton dp;
     private javax.swing.JButton dp2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
