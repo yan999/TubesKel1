@@ -123,6 +123,7 @@ public class KelolaPelanggan extends javax.swing.JPanel {
         return back;
     }
     
+    
     public void addListener(ActionListener e){
         back.addActionListener(e);
     }

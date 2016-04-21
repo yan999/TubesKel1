@@ -7,6 +7,7 @@ package GUI;
 
 import Model.PaketWisata;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
@@ -79,28 +80,30 @@ public class PaketInt extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(242, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(240, 240, 240))
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(back)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pesan))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(back)
+                .addGap(401, 401, 401)
+                .addComponent(pesan)
+                .addContainerGap(51, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(240, 240, 240))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(47, 47, 47)
+                .addGap(49, 49, 49)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(back)
                     .addComponent(pesan))
@@ -112,8 +115,13 @@ public Object getBack(){
     return back;
 }
 
+public Object getPesan(){
+    return pesan;
+}
+
 public void addListener(ActionListener e){
     back.addActionListener(e);
+    pesan.addActionListener(e);
 }
     
 public void setTableInt(ArrayList<PaketWisata> p){
@@ -132,6 +140,16 @@ public void setTableInt(ArrayList<PaketWisata> p){
     TableInt.setModel(tableModel);
     
 }
+
+public int getSelectedId(){
+    return TableInt.getSelectedRow();
+}
+
+public void addAdapter(MouseAdapter e){
+    TableInt.addMouseListener(e);
+}
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TableInt;

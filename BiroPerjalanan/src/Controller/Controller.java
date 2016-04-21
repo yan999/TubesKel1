@@ -9,6 +9,7 @@ import GUI.*;
 import Model.Aplikasi;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -16,7 +17,7 @@ import javax.swing.JPanel;
  *
  * @author Arian Nurrifqhi
  */
-public class Controller implements ActionListener{
+public class Controller extends MouseAdapter implements ActionListener{
     private Aplikasi model;
     private Form view;
     
