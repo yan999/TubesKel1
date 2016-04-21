@@ -10,6 +10,7 @@ import Model.Aplikasi;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -33,6 +34,8 @@ public class Controller extends MouseAdapter implements ActionListener{
     private Step3 st3;
     private KelolaPelanggan kp1;
     private KelolaPetugas kp2;
+    
+    private int kodeSeleksi;
     
     public Controller(Aplikasi model){
         this.model = model;
@@ -137,12 +140,21 @@ public class Controller extends MouseAdapter implements ActionListener{
                 currentView = "0";
                 view.getCardLayout().show(mainPanel, currentView);
             }
+            else if (source.equals(pi.getPesan())){
+                currentView = "";
+            }
         }
         else if(currentView.equals("5")){
             if(source.equals(pl.getBack())){
                 currentView = "0";
                 view.getCardLayout().show(mainPanel, currentView);
             }
+        }
+    }
+    
+    public void mousePressed(MouseEvent e){
+        if (currentView.equals("4")){
+            kodeSeleksi = pi.getSelectedId();
         }
     }
 }

@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Arian Nurrifqhi
@@ -28,7 +30,7 @@ public class Step1 extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        proses = new javax.swing.JButton();
+        submit = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         bca = new javax.swing.JRadioButton();
         mandiri = new javax.swing.JRadioButton();
@@ -53,8 +55,9 @@ public class Step1 extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        back = new javax.swing.JButton();
 
-        proses.setText("SUBMIT");
+        submit.setText("SUBMIT");
 
         bca.setText("BCA");
 
@@ -118,6 +121,13 @@ public class Step1 extends javax.swing.JPanel {
 
         jLabel9.setText("TRANSAKSI");
 
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -126,8 +136,11 @@ public class Step1 extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(proses)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(back)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(submit))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel5)
@@ -221,7 +234,9 @@ public class Step1 extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(proses)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(submit)
+                    .addComponent(back))
                 .addGap(31, 31, 31))
         );
 
@@ -267,9 +282,66 @@ public class Step1 extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_namalengkapActionPerformed
 
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_backActionPerformed
+
+public Object getBack(){
+    return back;
+}
+
+public Object getSubmit(){
+    return submit;
+}
+
+public void addListener(ActionListener e){
+    back.addActionListener(e);
+    submit.addActionListener(e);
+}
+
+public String getNama(){
+    return namalengkap.getText();
+}
+
+public String getNoKtp(){
+    return noktp.getText();
+}
+
+public String getJenisKelamin(){
+    return (String) Jk.getSelectedItem();
+}
+
+public String getDay(){
+    return day.getText();
+}
+
+public String getMonth(){
+    return month.getText();
+}
+
+public String getYear(){
+    return year.getText();
+}
+
+public String getBNI(){
+    return bni.getText();
+}
+
+public String getMandiri(){
+    return mandiri.getText();
+}
+
+public String getBRI(){
+    return bri.getText();
+}
+
+public String getBCA(){
+    return bca.getText();
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox Jk;
+    private javax.swing.JButton back;
     private javax.swing.JRadioButton bca;
     private javax.swing.JRadioButton bni;
     private javax.swing.JRadioButton bri;
@@ -293,7 +365,7 @@ public class Step1 extends javax.swing.JPanel {
     private javax.swing.JTextField month;
     private javax.swing.JTextField namalengkap;
     private javax.swing.JTextField noktp;
-    private javax.swing.JButton proses;
+    private javax.swing.JButton submit;
     private javax.swing.JTextField year;
     // End of variables declaration//GEN-END:variables
 }
