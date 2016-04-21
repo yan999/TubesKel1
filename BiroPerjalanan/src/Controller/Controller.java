@@ -74,6 +74,7 @@ public class Controller implements ActionListener{
                 view.getCardLayout().show(mainPanel, currentView);
             }
             else if(source.equals(log.getIntButton())){
+                pi.setTableInt(model.getPaketWisata());
                 currentView = "4";
                 view.getCardLayout().show(mainPanel, currentView);
             }
@@ -113,6 +114,18 @@ public class Controller implements ActionListener{
         }
         else if(currentView.equals("3")){
             if(source.equals(kp2.getBack())){
+                currentView = "1";
+                view.getCardLayout().show(mainPanel, currentView);
+            }
+        }
+        else if(currentView.equals("4")){
+            if(source.equals(pi.getBack())){
+                currentView = "1";
+                view.getCardLayout().show(mainPanel, currentView);
+            }
+        }
+        else if(currentView.equals("5")){
+            if(source.equals(pl.getBack())){
                 currentView = "1";
                 view.getCardLayout().show(mainPanel, currentView);
             }

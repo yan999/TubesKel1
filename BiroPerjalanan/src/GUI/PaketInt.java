@@ -6,6 +6,7 @@
 package GUI;
 
 import Model.PaketWisata;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
@@ -99,8 +100,15 @@ public class PaketInt extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+public Object getBack(){
+    return back;
+}
+
+public void addListener(ActionListener e){
+    back.addActionListener(e);
+}
     
-public void setTableLokal(ArrayList<PaketWisata> p){
+public void setTableInt(ArrayList<PaketWisata> p){
     String[] header ={"Nama Paket","Lokasi","Fasilitas","Harga","Durasi","Aksi"};
     String[][] isi = new String[p.size()][6] ;
     for(int i =0;i<p.size();i++){
