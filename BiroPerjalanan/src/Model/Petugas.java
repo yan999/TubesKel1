@@ -37,6 +37,7 @@ public class Petugas extends Orang {
         return idpetugas;
     }
     
+    @Override
     public String getName(){
         return super.getName();
     }

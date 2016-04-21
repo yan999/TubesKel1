@@ -27,12 +27,10 @@ public class BiroPerjalanan {
     public static void main(String[] args) {
         Petugas p = new Petugas("Arian Nurrifqhi","Laki-Laki","123456789");
         
-        p.addUsername("arian");
-        p.addPassword("arian");
-        
         Aplikasi app = new Aplikasi();
         app.addPetugas("Arian Nurrifqhi", "Laki-Laki", "123456789");
-        app.getDaftarPetugas();
+        app.getDaftarPetugas().get(0).addUsername("arian");
+        app.getDaftarPetugas().get(0).addPassword("arian");
         new Controller(app);
         
         
