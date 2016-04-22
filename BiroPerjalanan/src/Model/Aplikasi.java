@@ -112,6 +112,10 @@ public class Aplikasi {
         return daftarPetugas;
     }
     
+    public void createPerjalanan(String day, String month, String year, String bankTrasnfer){
+        daftarPerjalanan.add(new Perjalanan(day, month, year, bankTrasnfer));
+    }
+    
     public ArrayList<Perjalanan> getListTransaksi(){
         return daftarPerjalanan;
     }

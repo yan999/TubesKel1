@@ -304,6 +304,14 @@ public void addListener(ActionListener e){
     submit.addActionListener(e);
 }
 
+public void Rafresh(){
+        namalengkap.setText("");
+        noktp.setText("");
+        day.setText("");
+        month.setText("");
+        year.setText("");
+    }
+
 public String getNama(){
     return namalengkap.getText();
 }

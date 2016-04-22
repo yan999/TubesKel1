@@ -11,12 +11,16 @@ import java.util.ArrayList;
  *
  * @author Arian Nurrifqhi
  */
+import  java.util.*;
+import java.io.*;
+
 public class Perjalanan {
     
     private String banktransfer;
     private String day;
     private String month;
     private String year;
+    private String norek;
     
     
     public Perjalanan(String day, String month, String year, String bankTransfer){
@@ -59,5 +63,10 @@ public class Perjalanan {
     public String getYear() {
         return year;
     }
+    
+    public String getNorek(){
+        return norek;
+    }
+    
     
 }

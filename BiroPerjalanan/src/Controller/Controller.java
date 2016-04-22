@@ -183,13 +183,19 @@ public class Controller extends MouseAdapter implements ActionListener{
                         ||st1.getDay().equals("")||st1.getMonth().equals("")||st1.getYear().equals("")){
                     JOptionPane.showMessageDialog(view, "Data Belum Lengkap", "PERINGATAN", JOptionPane.QUESTION_MESSAGE);
                 }else{
-                    if(jPanel=="4"){
+                    model.createPerjalanan(st1.getDay(), st1.getMonth(), st1.getYear(), st1.getOperation());
+                    if("4".equals(jPanel)){
                         st2.setPaketWisata(model.getInternasional().get(kodeSeleksi));
+                        st2.setPerjalanan(model.getListTransaksi().get(kodeSeleksi));
+                    }else if("5".equals(jPanel)){
+                        st2.setPaketWisata(model.getLokal().get(kodeSeleksi));
+                        st2.setPerjalanan(model.getListTransaksi().get(kodeSeleksi));
                     }
-                model.addPelanggan(st1.getNama(), st1.getJenisKelamin(), st1.getNoKtp());
-                model.addPerjalanan(st1.getDay(), st1.getMonth(), st1.getYear(), st1.getOperation());
+               model.addPelanggan(st1.getNama(), st1.getJenisKelamin(), st1.getNoKtp());
+               model.addPerjalanan(st1.getDay(), st1.getMonth(), st1.getYear(), st1.getOperation());
                 currentView = "7";
-                view.getCardLayout().show(mainPanel, currentView);}
+                view.getCardLayout().show(mainPanel, currentView);
+                st1.Rafresh();}
             }
         }
         else if(currentView.equals("7")){
