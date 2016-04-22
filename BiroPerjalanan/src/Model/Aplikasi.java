@@ -80,10 +80,8 @@ public class Aplikasi {
         return daftarPelanggan;
     }
     
-    public void deletePelanggan(String id){
-        if(findPelangganbyId(id) != -1){
-            daftarPelanggan.remove(findPelangganbyId(id));
-        }    
+    public void deletePelanggan(int n){
+        daftarPelanggan.remove(n);
     }
     
     public void addPaketWisata(){

@@ -10,6 +10,7 @@ import Model.PaketWisata;
 import Model.Pelanggan;
 import Model.Perjalanan;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
@@ -40,6 +41,7 @@ public class KelolaPelanggan extends javax.swing.JPanel {
         TabelPelanggan = new javax.swing.JTable();
         back = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        hapus = new javax.swing.JButton();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -90,6 +92,8 @@ public class KelolaPelanggan extends javax.swing.JPanel {
 
         jLabel1.setText("KONFIGURASI DATA PELANGGAN");
 
+        hapus.setText("Hapus");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -101,11 +105,14 @@ public class KelolaPelanggan extends javax.swing.JPanel {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(267, 267, 267)
-                        .addComponent(back)))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(17, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(back)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(hapus)
+                .addGap(179, 179, 179))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,9 +121,11 @@ public class KelolaPelanggan extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(back)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(back)
+                    .addComponent(hapus))
+                .addGap(27, 27, 27))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -128,9 +137,14 @@ public class KelolaPelanggan extends javax.swing.JPanel {
         return back;
     }
     
+    public Object getHapus(){
+        return hapus;
+    }
+    
     
     public void addListener(ActionListener e){
         back.addActionListener(e);
+        hapus.addActionListener(e);
     }
     
     public void setTablePelanggan(ArrayList<Pelanggan> p, ArrayList<PaketWisata> pw, ArrayList<Perjalanan> pj){
@@ -149,10 +163,19 @@ public class KelolaPelanggan extends javax.swing.JPanel {
     
 }
     
+public int getSelectedId(){
+    return TabelPelanggan.getSelectedRow();
+}
+
+public void addAdapter(MouseAdapter e){
+    TabelPelanggan.addMouseListener(e);
+}
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TabelPelanggan;
     private javax.swing.JButton back;
+    private javax.swing.JButton hapus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

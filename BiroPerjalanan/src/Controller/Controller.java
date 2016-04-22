@@ -61,6 +61,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         st2.addListener(this);
         st3.addListener(this);
         pl.addListener(this);
+        kp1.addAdapter(this);
         pi.addAdapter(this);
         pl.addAdapter(this);
         
@@ -137,6 +138,12 @@ public class Controller extends MouseAdapter implements ActionListener{
             if(source.equals(kp1.getBack())){
                 currentView = "1";
                 view.getCardLayout().show(mainPanel, currentView);
+            }else if(source.equals(kp1.getHapus())){
+                if(kodeSeleksi == -1){
+                    JOptionPane.showMessageDialog(view, "Anda Tidak Memilih Paket", "INFORMASI", JOptionPane.QUESTION_MESSAGE);
+                }else
+                    model.deletePelanggan(kodeSeleksi);
+                    JOptionPane.showMessageDialog(view, "Data Terhapus", "INFORMASI", JOptionPane.QUESTION_MESSAGE);
             }
         }
         else if(currentView.equals("3")){
@@ -241,6 +248,9 @@ public class Controller extends MouseAdapter implements ActionListener{
         }
         else if(currentView.equals("5")){
             kodeSeleksi = pl.getSelectedId();
+        }
+        else if(currentView.equals("2")){
+            kodeSeleksi = kp1.getSelectedId();
         }
     }
 }
