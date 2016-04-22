@@ -6,6 +6,7 @@
 package GUI;
 
 import java.awt.event.ActionListener;
+import javax.swing.ButtonModel;
 
 /**
  *
@@ -310,6 +311,7 @@ public void Rafresh(){
         day.setText("");
         month.setText("");
         year.setText("");
+        Transfer.clearSelection();
     }
 
 public String getNama(){

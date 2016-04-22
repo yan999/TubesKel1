@@ -76,6 +76,10 @@ public class Aplikasi {
         return null;
     }
     
+    public ArrayList<Pelanggan> getPelanggan(){
+        return daftarPelanggan;
+    }
+    
     public void deletePelanggan(String id){
         if(findPelangganbyId(id) != -1){
             daftarPelanggan.remove(findPelangganbyId(id));

@@ -59,6 +59,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         pi.addListener(this);
         st1.addListener(this);
         st2.addListener(this);
+        st3.addListener(this);
         pl.addListener(this);
         pi.addAdapter(this);
         pl.addAdapter(this);
@@ -97,18 +98,19 @@ public class Controller extends MouseAdapter implements ActionListener{
                     
             }
             else if(source.equals(log.getIntButton())){
-                pi.setTableInt(model.getPaketWisata());
+                pi.setTableInt(model.getInternasional());
                 currentView = "4";
                 view.getCardLayout().show(mainPanel, currentView);
             }
             else if(source.equals(log.getLokalButton())){
-                pl.setTableLokal(model.getPaketWisata());
+                pl.setTableLokal(model.getLokal());
                 currentView = "5";
                 view.getCardLayout().show(mainPanel, currentView);
             }
         }
         else if (currentView.equals("1")){
             if (source.equals(dp.getdp())){
+                 kp1.setTablePelanggan(model.getPelanggan(), model.getPaketWisata(), model.getListTransaksi());
                  currentView = "2";
             view.getCardLayout().show(mainPanel, currentView);
             }
@@ -185,11 +187,12 @@ public class Controller extends MouseAdapter implements ActionListener{
                 }else{
                     model.createPerjalanan(st1.getDay(), st1.getMonth(), st1.getYear(), st1.getOperation());
                     if("4".equals(jPanel)){
+                        System.out.println(kodeSeleksi);
                         st2.setPaketWisata(model.getInternasional().get(kodeSeleksi));
-                        st2.setPerjalanan(model.getListTransaksi().get(kodeSeleksi));
+                        st2.setPerjalanan(model.getListTransaksi().get(model.getListTransaksi().size()-1));
                     }else if("5".equals(jPanel)){
                         st2.setPaketWisata(model.getLokal().get(kodeSeleksi));
-                        st2.setPerjalanan(model.getListTransaksi().get(kodeSeleksi));
+                        st2.setPerjalanan(model.getListTransaksi().get(model.getListTransaksi().size()-1));
                     }
                model.addPelanggan(st1.getNama(), st1.getJenisKelamin(), st1.getNoKtp());
                model.addPerjalanan(st1.getDay(), st1.getMonth(), st1.getYear(), st1.getOperation());
@@ -197,15 +200,38 @@ public class Controller extends MouseAdapter implements ActionListener{
                 view.getCardLayout().show(mainPanel, currentView);
                 st1.Rafresh();}
             }
+            st1.Rafresh();
         }
         else if(currentView.equals("7")){
             if(source.equals(st2.getBack())){
                 currentView = "6";
                 view.getCardLayout().show(mainPanel, currentView);
+                
             }else if(source.equals(st2.getKonfirmasi())){
+                st3.setPelanggan(model.getPelanggan().get(model.getPelanggan().size()-1));
+                st3.setPerjalanan(model.getListTransaksi().get(model.getListTransaksi().size()-1));
+                if("4".equals(jPanel)){
+                    st3.setPaketWisata(model.getInternasional().get(kodeSeleksi));
+                }
+                else if("5".equals(jPanel)){
+                    st3.setPaketWisata(model.getLokal().get(kodeSeleksi));
+                }
+                
+               //st3.setIdentitasNama(model.checkPetugas(log.getUsername(), log.getPassword()));
                 currentView = "8";
                 view.getCardLayout().show(mainPanel, currentView);
             }
+        }
+        else if(currentView.equals("8")){
+           if(source.equals(st3.getBack())){
+               currentView = "0";
+               view.getCardLayout().show(mainPanel, currentView);
+           }
+           else if(source.equals(st3.getCetak())){
+               JOptionPane.showMessageDialog(view, "Tiket Tercetak", "Print", JOptionPane.INFORMATION_MESSAGE);
+               currentView = "0";
+               view.getCardLayout().show(mainPanel, currentView);
+           }
         }
     }
     
