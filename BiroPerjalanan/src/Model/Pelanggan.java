@@ -5,14 +5,28 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Arian Nurrifqhi
  */
+
 public class Pelanggan extends Orang {
     //private String idpelanggan;
+    private PaketWisata daftarPaketWisata;
+    
     public Pelanggan(String name, String gender, String idktp) {
         super(name, gender, idktp);
     }
+
+    public PaketWisata getDaftarPaketWisata() {
+        return daftarPaketWisata;
+    }
+
+    public void setDaftarPaketWisata(PaketWisata daftarPaketWisata) {
+        this.daftarPaketWisata = daftarPaketWisata;
+    }
     
+        
 }

@@ -7,6 +7,7 @@ package Controller;
 
 import GUI.*;
 import Model.Aplikasi;
+import Model.Petugas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -21,6 +22,7 @@ import javax.swing.JPanel;
 public class Controller extends MouseAdapter implements ActionListener{
     private Aplikasi model;
     private Form view;
+    private EditPetugas popup;
     
     private String currentView;
     private JPanel mainPanel;
@@ -34,6 +36,7 @@ public class Controller extends MouseAdapter implements ActionListener{
     private Step3 st3;
     private KelolaPelanggan kp1;
     private KelolaPetugas kp2;
+    private Petugas pt;
     
     private int kodeSeleksi =-1;
     private String jPanel;
@@ -52,6 +55,8 @@ public class Controller extends MouseAdapter implements ActionListener{
         kp1 = new KelolaPelanggan();
         kp2 = new KelolaPetugas();
         
+        popup = new EditPetugas();
+        
         log.addListener(this);
         dp.addListener(this);
         kp1.addListener(this);
@@ -64,6 +69,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         kp1.addAdapter(this);
         pi.addAdapter(this);
         pl.addAdapter(this);
+        popup.addListener(this);
         
         mainPanel = view.getMainPanel();
         mainPanel.add(log,"0");
@@ -90,6 +96,7 @@ public class Controller extends MouseAdapter implements ActionListener{
                     JOptionPane.showMessageDialog(view, "Data Masih Kosong", "ERROR",JOptionPane.ERROR_MESSAGE);
                 }
                 else if(model.checkPetugas(log.getUsername(), log.getPassword())!=null){
+                    pt=model.checkPetugas(log.getUsername(), log.getPassword());
                 dp.setIdentitasNama(model.checkPetugas(log.getUsername(), log.getPassword()));
                 log.Refresh();
                 currentView = "1";
@@ -111,7 +118,7 @@ public class Controller extends MouseAdapter implements ActionListener{
         }
         else if (currentView.equals("1")){
             if (source.equals(dp.getdp())){
-                 kp1.setTablePelanggan(model.getPelanggan(), model.getPaketWisata(), model.getListTransaksi());
+                 kp1.setTablePelanggan(model.getPelanggan(), model.getListTransaksi());
                  currentView = "2";
             view.getCardLayout().show(mainPanel, currentView);
             }
@@ -141,15 +148,31 @@ public class Controller extends MouseAdapter implements ActionListener{
             }else if(source.equals(kp1.getHapus())){
                 if(kodeSeleksi == -1){
                     JOptionPane.showMessageDialog(view, "Anda Tidak Memilih Paket", "INFORMASI", JOptionPane.QUESTION_MESSAGE);
-                }else
+                }else{
                     model.deletePelanggan(kodeSeleksi);
+                    kp1.setTablePelanggan(model.getPelanggan(), model.getListTransaksi());
                     JOptionPane.showMessageDialog(view, "Data Terhapus", "INFORMASI", JOptionPane.QUESTION_MESSAGE);
+                }
             }
         }
         else if(currentView.equals("3")){
             if(source.equals(kp2.getBack())){
                 currentView = "1";
                 view.getCardLayout().show(mainPanel, currentView);
+            }
+            else if(source.equals(kp2.getEdit())){
+                popup.setAll(pt);
+                popup.setVisible(true);
+            }
+            else if(source.equals(popup.getSave())){
+            model.editPetugas(pt, popup.getUn(), popup.getPs());
+            JOptionPane.showMessageDialog(popup, "Data Tersimpan", "INFO", JOptionPane.INFORMATION_MESSAGE);
+            kp2.setTablePetugas(model.getDaftarPetugas());
+            popup.setVisible(false);
+             }
+        
+            else if(source.equals(popup.getCancel())){
+                 popup.setVisible(false);
             }
         }
         else if(currentView.equals("4")){
@@ -196,12 +219,14 @@ public class Controller extends MouseAdapter implements ActionListener{
                     if("4".equals(jPanel)){
                         System.out.println(kodeSeleksi);
                         st2.setPaketWisata(model.getInternasional().get(kodeSeleksi));
+                        model.addPelanggan(st1.getNama(), st1.getJenisKelamin(), st1.getNoKtp(),model.getInternasional().get(kodeSeleksi));
                         st2.setPerjalanan(model.getListTransaksi().get(model.getListTransaksi().size()-1));
                     }else if("5".equals(jPanel)){
                         st2.setPaketWisata(model.getLokal().get(kodeSeleksi));
+                        model.addPelanggan(st1.getNama(), st1.getJenisKelamin(), st1.getNoKtp(),model.getLokal().get(kodeSeleksi));
                         st2.setPerjalanan(model.getListTransaksi().get(model.getListTransaksi().size()-1));
                     }
-               model.addPelanggan(st1.getNama(), st1.getJenisKelamin(), st1.getNoKtp());
+              
                model.addPerjalanan(st1.getDay(), st1.getMonth(), st1.getYear(), st1.getOperation());
                 currentView = "7";
                 view.getCardLayout().show(mainPanel, currentView);
@@ -240,6 +265,7 @@ public class Controller extends MouseAdapter implements ActionListener{
                view.getCardLayout().show(mainPanel, currentView);
            }
         }
+        
     }
     
     public void mousePressed(MouseEvent e){

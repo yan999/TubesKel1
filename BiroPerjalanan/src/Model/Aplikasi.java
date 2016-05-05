@@ -32,8 +32,14 @@ public class Aplikasi {
         daftarPetugas.add(new Petugas(name, gender, idktp));
     }
     
-    public void addPelanggan(String name, String gender, String idktp){
+    public void editPetugas(Petugas p, String username, String password){
+        p.addUsername(username);
+        p.addPassword(password);
+    }
+    
+    public void addPelanggan(String name, String gender, String idktp,PaketWisata p){
         daftarPelanggan.add(new Pelanggan(name, gender, idktp));
+        daftarPelanggan.get(daftarPelanggan.size()-1).setDaftarPaketWisata(p);
     }
     
     public void addPerjalanan(String day, String month, String year, String banktransfer){

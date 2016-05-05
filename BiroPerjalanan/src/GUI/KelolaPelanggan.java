@@ -147,14 +147,14 @@ public class KelolaPelanggan extends javax.swing.JPanel {
         hapus.addActionListener(e);
     }
     
-    public void setTablePelanggan(ArrayList<Pelanggan> p, ArrayList<PaketWisata> pw, ArrayList<Perjalanan> pj){
+    public void setTablePelanggan(ArrayList<Pelanggan> p, ArrayList<Perjalanan> pj){
     String[] header ={"No KTP","Nama","Jenis Kelamin","Paket","Keberangkatan"};
     String[][] isi = new String[p.size()][5] ;
     for(int i =0;i<p.size();i++){
         isi[i][0] = p.get(i).getIdKtp();
         isi[i][1] = p.get(i).getName();
         isi[i][2] = p.get(i).getGender();
-        isi[i][3] = pw.get(i).getTempatWisata().getType();
+        isi[i][3] = p.get(i).getDaftarPaketWisata().getTempatWisata().getType();
         isi[i][4] = pj.get(i).getDay()+" /"+pj.get(i).getMonth()+" /"+pj.get(i).getYear();
     }
     
