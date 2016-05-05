@@ -76,6 +76,7 @@ public class Step3 extends javax.swing.JPanel {
 
         cetak.setText("Cetak");
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Your Travel Ticket"));
 
         jLabel5.setText("TERIMA KASIH");
