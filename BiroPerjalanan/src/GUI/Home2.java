@@ -41,6 +41,8 @@ public class Home2 extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         internasional.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Paketi.png"))); // NOI18N
         internasional.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
